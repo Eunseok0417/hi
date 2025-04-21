@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title> jQuery</title>
+	
+	<link rel="stylesheet" href="css/style.css">	
+	
+</head>
+
+
+<body>
+
+  <div id="container">
+
+<header>
+<h1>jQuery</h1>
+<h2>life</h2>
+</header>
+
+<main>
+<button id='magic'>Show hidden content</button>
+<button id='whatever'>Show hidden content</button>
+<button id='labu'>Show hidden content</button>
+
+<p id="minnie">Our prime purpose in this life is to help others. And if you can't help them, at least don't hurt them. - Dalai Lama</p>
+
+<p id="lola">Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. - Marie Curie</p>
+
+<p id="cuma">It does not matter how slowly you go as long as you do not stop. - Confucius</p>
+
+</main>
+
+
+
+  </div><!-- close "container" -->
+  
+  
+  <!-- Paste the jQuery starter code below here -->
+  
+    <!-- Link to jQuery on Google CDN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+
+<script>
+  $(document).ready(function() {
+
+$('p#minnie').hide();
+$('p#lola').hide();
+$('p#cuma').hide();
+
+$('button#magic').click(function(){
+	//$('p#minnie').show();
+	//$('p#minnie').slideDown(200);
+	$('p#minnie').slideToggle(500);
+
+});//close click function
+
+$('button#whatever').click(function(){
+	//$('p#lola').fadeIn(1000);
+	$('p#lola').fadeToggle(1000);
+});//close click function
+
+$('button#labu').click(function(){
+	//$('ㅔ#cuma').show();
+	//$('p#cuma').slideup(300);
+	$('p#cuma').fadeToggle(500);
+
+});//close click function
+
+$('h2').click(function(){
+	//$('body').css('background','orange');
+	//$('body').addClass('orma');
+	$('h1ß').toggleClass('orma');
+
+});//close third function
+
+
+
+  }); //close .ready()
+</script>
+  
+
+</body>
+	
+</html> 

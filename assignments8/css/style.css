@@ -1,0 +1,78 @@
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+
+
+body {
+	background:#74edc7;
+	
+}
+
+button{
+	background-color: #4275c7;
+}
+
+#container {
+	
+}
+
+h2{
+	cursor: pointer;
+}
+
+.omar{
+background: orange;
+color: purple;
+font-size: 2em;
+font-family: Impact, sans sans-serif;
+}
+
+/* ========================================
+MEDIA QUERIES!
+You can adjust the min-width numbers below, and add as many new media queries as you need.
+======================================== */
+
+
+
+/* Minimum width for laptops. */
+@media all and (min-width: 769px) {
+	
+#container{
+	width: 90%;
+	margin: auto;
+}
+	
+	
+} /* closes 769px+ */
+
+
+
+
+/* Minimum width for desktop screens. */
+@media all and (min-width: 1024px) {
+	
+#container{
+	width: 85%;
+}
+main{
+	display: flex;
+}
+figure, section{
+	flex: 1 0 50%;
+	padding: 10px;
+	/*flex-basis: 33%;*/
+}
+	
+	
+} /* closes 1024px+ */
