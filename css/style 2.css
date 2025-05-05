@@ -242,6 +242,14 @@ main {
 .signup-form button:hover {
   background-color: #2563eb;
 }
+
+.image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 }
 
 
@@ -274,7 +282,9 @@ You can adjust the min-width numbers below, and add as many new media queries as
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-	
+.image img {
+  padding: 0 1rem;
+}
 	
 } /* closes 769px+ */
 
