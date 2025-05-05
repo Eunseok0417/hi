@@ -1,20 +1,20 @@
 /* Basic CSS resets -- leveling slight inconsistencies in browsers */
 html, body {
-	margin:0px;
-	padding:0px;
-	height:100%;
+  margin:0px;
+  padding:0px;
+  height:100%;
 }
 
 html {
-		/* Standard text-settings below */
-	font-size: 1em;
+    /* Standard text-settings below */
+  font-size: 1em;
     line-height: 1.4em;
 }
 
 
 
 
-body {
+
 @import url("https://fonts.googleapis.com/css2?family=Italianno&family=Irish+Grover&display=swap");
 
 * {
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+  }
 
 /* Header */
 .header {
@@ -43,6 +43,7 @@ body {
 
 .header-content {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;     
   gap: 20px;
@@ -86,26 +87,46 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 20px;
+  padding: 80px 20px;
   text-align: center;
+  min-height: 80vh;
+}
+
+.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  text-align: left;
 }
 
 .feature-image {
-  width: 300px;
+  width: 200px;
   height: auto;
-  margin-bottom: 20px;
 }
 
-.main-article h2 {
+.text-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.text-column h2 {
   font-family: 'Irish Grover', cursive;
   font-size: 20px;
   margin-bottom: 10px;
+  text-align: center;
+    color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-.main-article h3 {
+.text-column h3 {
   font-size: 16px;
   line-height: 1.6;
-  max-width: 600px;
+    color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .products {
@@ -145,13 +166,16 @@ main {
 
 .about-title {
   font-family: "Instrument Serif-Regular", Helvetica; 
-  font-size: 64px;
+  font-size: 30px;
   text-align: center;
   margin: 2rem 1rem;
   max-width: 90%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
 }
 .about {
   font-family: "Istok Web-Regular", Helvetica; 
@@ -159,6 +183,16 @@ main {
   text-align: center; 
   max-width: 800px;
   margin: 0 auto;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
+}
+.about-wrapper {
+  background-image: url("../img/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
 }
 .about p{
   margin-bottom: 2rem;
@@ -243,18 +277,60 @@ main {
   background-color: #2563eb;
 }
 
-.image img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1000px;
   margin: 0 auto;
 }
+
+.image-item {
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-name {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
+}
+
+body {
+  position: relative;
+  z-index: 0;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/space.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);    
+  opacity: 60;        
+  z-index: -1;           
 }
 
 
 #container {
-	
+  
 }
 
 
@@ -274,7 +350,7 @@ You can adjust the min-width numbers below, and add as many new media queries as
 
 /* Minimum width for laptops. */
 @media all and (min-width: 769px) {
-	
+  
 .about-title {
   font-size: 32px;
   padding: 0 1rem;
@@ -284,8 +360,8 @@ You can adjust the min-width numbers below, and add as many new media queries as
 }
 .image img {
   padding: 0 1rem;
-}
-	
+  }
+  
 } /* closes 769px+ */
 
 
@@ -298,8 +374,8 @@ main, .signup-container, .about, .products {
   text-align: center;
 }
 
-.header-content,{
-  flex-direction: column;
+.header-content{
+  flex-direction: row;
   align-items: center;
 }
 
@@ -313,11 +389,11 @@ main, .signup-container, .about, .products {
   width: 100%;
   margin-bottom: 2rem;
 }
+.image-grid {
+  grid-template-columns: repeat(2, 2fr);
 }
-	
-	
-	
+}
+  
+  
+  
 } /* closes 1024px+ */
-
-
-
